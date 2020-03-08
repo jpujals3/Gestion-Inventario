@@ -1,0 +1,28 @@
+.stickyColumn {
+    position: sticky;
+    left: 0;
+    background-color: #f8f8f8;
+    min-width: 450px !important;
+    z-index: 1;
+}
+
+.stickyHeader {
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+}
+
+.stickyColumn.stickyHeader {
+    z-index: 2;
+}
+
+.overflow {
+    max-height: 75vh;
+    overflow: scroll  !important;
+  position: relative  !important;
+}
+
+.table-container {
+    overflow: auto !important;
+    max-height: 80vh !important; 
+}
