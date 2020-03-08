@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+		<meta name="metro4:init" content="false">
+		<meta name="metro4:locale" content="es-ES">
+    <link rel="stylesheet" href="css/metro-all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"
+    />
+  </head>
+  <body>
+    <div id="app">
+			<div class="card">
+				<div class="card-header">
+					<div class="grid">
+						<div class="row">
+						<div class="cell-2">
+							<input type="text" data-role="input" data-prepend="Filtro: ">
+							<input data-role="datepicker" data-day="false" v-bind:value="'10-03-2020'">
+						</div>
+						<div class="cell-1">
+							<input type="radio" data-role="radio" data-caption="Marca">
+							<input type="radio" data-role="radio" data-caption="Municipio">
+							<input type="radio" data-role="radio" data-caption="Concesionario">
+							<input type="radio" data-role="radio" data-caption="Vendedor">
+						</div>
+						<div class="cell-2">
+							<input 
+								data-role="doubleslider"
+								data-show-min-max="true"
+								data-hint-mask-min="Min: $1"
+								data-hint-mask-max="Max: $1"
+								data-hint-always="true"
+								data-value-min="20"
+								data-value-max="80"
+								data-cls-hint="bg-cyan fg-white">
+						</div>
+						</div>
+					</div>
+				</div>
+				<div class="card-content p-2">
+
+					<table 
+					class="table table-border cell-border mt-4 overflow"
+					data-role="table"
+					data-rows="-1"
+					data-show-pagination="false"
+					data-show-rows-steps="false"
+					data-show-search="false"
+					data-show-table-info="false"
+					data-horizontal-scroll="true"
+					data-vertical-scroll="true"
+					>
+					<thead>
+						<tr>
+							<th 
+								data-cls-column="stickyColumn"
+								class="stickyColumn stickyHeader"
+								>Concepto</th>
+							<th class="stickyHeader">Nuevos</th>
+							<th class="stickyHeader">Seminuevos</th>
+							<th class="stickyHeader">Financiados</th>
+							<th class="stickyHeader">Híbridos</th>
+							<th class="stickyHeader">Gasolina</th>
+							<th class="stickyHeader">Nuevos</th>
+							<th class="stickyHeader">Seminuevos</th>
+							<th class="stickyHeader">Financiados</th>
+							<th class="stickyHeader">Híbridos</th>
+							<th class="stickyHeader">Gasolina</th>
+							<th class="stickyHeader">Nuevos</th>
+							<th class="stickyHeader">Seminuevos</th>
+							<th class="stickyHeader">Financiados</th>
+							<th class="stickyHeader">Híbridos</th>
+							<th class="stickyHeader">Gasolina</th>
+							<th class="stickyHeader">Nuevos</th>
+							<th class="stickyHeader">Seminuevos</th>
+							<th class="stickyHeader">Financiados</th>
+							<th class="stickyHeader">Híbridos</th>
+							<th class="stickyHeader">Gasolina</th>
+							
+						</tr>
+					</thead>
+					<tbody>
+						<template v-for="brand in sells">
+							<table-row :sell="brand" :ancestorName="''">
+							</table-row>
+						</template>
+					</tbody>
+					</table>
+				</div>
+			</div>
+    </div>
+	</body>
+	<script src="js/vue.min.js"></script>
+	<script src="js/metro.min.js"></script>
+	<script src="js/main.js"></script>
+	<script>
+		 Metro.utils.addLocale({
+        'es-ES': {
+            "calendar": {
+                "months": [
+                    "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Dicimbre",
+                    "Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sept", "Oct", "Nov", "Dic"
+                ],
+                "days": [
+                    "Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag",
+                    "Sn", "Mn", "Di", "Mi", "Do", "Fr", "Sa",
+                    "Son", "Mon", "Die", "Mit", "Don", "Fre", "Sam"
+                ],
+                "time": {
+                    "days": "TAGE",
+                    "hours": "UHR",
+                    "minutes": "MIN",
+                    "seconds": "SEK"
+                }
+            },
+            "buttons": {
+                "ok": "OK",
+                "cancel": "Abbrechen",
+                "done": "Fertig",
+                "today": "Heute",
+                "now": "Jetzt",
+                "clear": "Reinigen",
+                "help": "Hilfe",
+                "yes": "Ja",
+                "no": "Nein",
+                "random": "Zufällig"
+            }
+        }
+		});
+		
+		window.METRO_LOCALE = "es-ES";
+		</script>
+</html>
